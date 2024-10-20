@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Usuário</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa; /* Fundo suave */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #28a745;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffc107; /* Efeito de hover */
+        }
+
+        /* Estilo da área do usuário */
+        .container {
+            margin-top: 2rem;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .profile-section:hover {
+            transform: scale(1.02);
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #28a745;
+            margin-right: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            font-weight: 700;
+            color: #28a745;
+        }
+
+        .profile-info p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-success:hover {
+            background-color: #218838; /* Efeito de hover */
+        }
+
+        /* Estilo da boneca */
+        .doll {
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 60px;
+            animation: walk 5s infinite linear;
+        }
+
+        @keyframes walk {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(80%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Estilo do progresso */
+        .progress-container {
+            position: relative;
+            height: 50px;
+            background: #e9ecef;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-top: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #28a745;
+            border-radius: 25px;
+            transition: width 0.5s;
+        }
+
+        /* Estilo do Footer */
+        .footer {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-logo"><img src="logo.png" alt="logo" width="80"></div>
+        <div class="nav-links">
+            <a href="User.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="evento.html">Participar</a>
+            <a href="apoiar.html">Apoiar</a>
+            <a href="areassujas.html">Áreas Sujas</a>
+            <a href="reciclar.html">Reciclar</a>
+        </div>
+        <div class="user-profile">
+            <a href="profile.html"><img src="foto.jpg" alt="Foto do Usuário" width="40"></a>
+            <button class="btn btn-danger" onclick="logout()">Sair</button>
+        </div>
+    </div>
+
+    <!-- Área do Usuário -->
+    <div class="container">
+        <div class="profile-section">
+            <img src="foto.jpg" alt="Foto do Usuário" class="profile-pic">
+            <div class="profile-info">
+                <h2 id="userName">Nome do Usuário</h2>
+                <p id="userEmail">Email: usuario@example.com</p>
+                <button class="btn btn-success" id="editButton">Editar Perfil</button>
+            </div>
+        </div>
+
+        <!-- Progresso do Usuário -->
+        <h3 class="mt-4">Progresso do Usuário</h3>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar" style="width: 60%;"></div> <!-- Altere o valor da largura para simular o progresso -->
+        </div>
+        <p class="text-center mt-2">60% Completo</p>
+        <img src="pngl.png" alt="Boneca" class="doll"> <!-- Imagem da boneca -->
+
+        <!-- Configurações de Privacidade -->
+        <div class="privacy-settings mt-4">
+            <h3>Configurações de Privacidade</h3>
+            <div class="privacy-option">
+                <label for="public-profile">Perfil Público:</label>
+                <input type="checkbox" id="public-profile" checked>
+            </div>
+            <div class="privacy-option">
+                <label for="receive-emails">Receber E-mails:</label>
+                <input type="checkbox" id="receive-emails" checked>
+            </div>
+            <div class="privacy-option">
+                <label for="share-data">Compartilhar Dados:</label>
+                <input type="checkbox" id="share-data">
+            </div>
+        </div>
+
+        <!-- Botão de Sair -->
+        <button class="btn btn-danger mt-4" id="logoutButton">Sair da Conta</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Nosso Projeto. Todos os direitos reservados. | <a href="#" class="text-white">Política de Privacidade</a></p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Logout
+        function logout() {
+            if (confirm('Você realmente deseja sair?')) {
+                window.location.href = 'index.html'; // Redirecionar para a página inicial após sair
+            }
+        }
+    </script>
+</body>
+
+</html>
