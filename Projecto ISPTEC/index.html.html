@@ -289,30 +289,7 @@
     text-align: center;
     margin: 20px;
 }
-.user-profile {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
 
-        .user-profile img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-        .logout-button {
-            background-color: #dc3545;
-            padding: 0.5rem 1rem;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .logout-button:hover {
-            background-color: #c82333;
-        }
 .smartphone {
     width: 200px; /* Ajuste o tamanho conforme necessário */
     transition: transform 0.3s;
@@ -373,23 +350,20 @@
     <div class="navbar">
         <div class="navbar-logo"><a href="home.html"><img src="logo.png" width="80px"></a></div>
         <div class="nav-links">
-            <a href="User.html">Home</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="evento.html">Participar</a>
-            <a href="areassujas.html">Áreas Sujas</a>
-            <a href="reciclar.html">Reciclar</a>
+            <a href="#home">Home</a>
+            <a href="#about">Sobre</a>
             <div class="dropdown">
-                <a href="#">Conteúdos</a>
+                <a href="#">Projetos</a>
                 <div class="dropdown-content">
-                    <a href="reciclar.html">Grupos</a>
-                    <a href="evento.html">Fotografias</a>
-                    <a href="evento.html">Aprenda a proteger a Natureza</a>
+                    <a href="#">Reciclagem</a>
+                    <a href="#">Limpeza</a>
+                    <a href="#">Reflorestamento</a>
                 </div>
             </div>
         </div>
-        <div class="user-profile">
-            <a href="profile.html"><img src="foto.jpg" alt="Foto do Usuário" width="80"></a>
-            <button class="logout-button" onclick="logout()">Sair</button>
+        <div class="auth-buttons">
+            <a href="login.html">Entrar</a>
+            <a href="cadastro.html">Cadastrar-se</a>
         </div>
     </div>
 
@@ -431,8 +405,8 @@
     <!-- Incentivo ao Cadastro -->
     <div class="signup-incentive">
         <h2>Participe e faça a diferença</h2>
-        <p>Junte-se aos nossos grupos.</p>
-        <a href="evento.html">Apoiar</a>
+        <p>Junte-se à nossa comunidade e contribua para projetos que mudam o mundo.</p>
+        <a href="cadastro.html">Criar Conta</a>
     </div>
 
     <!-- Imagem com Texto -->

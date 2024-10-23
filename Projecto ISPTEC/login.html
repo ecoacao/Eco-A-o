@@ -11,6 +11,7 @@
             background-color: #ffffff;
             margin: 0;
             padding: 0;
+            background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
         }
 
         /* Navbar */
@@ -46,6 +47,7 @@
 
         /* Formulário de Login */
         .form-container {
+           
             max-width: 400px;
             margin: 3rem auto;
             padding: 2rem;
@@ -74,6 +76,10 @@
             padding: 0.75rem;
             border-radius: 5px;
             border: 1px solid #ccc;
+        }
+        .form-group input:hover {
+            color: white;
+            opacity: 100%;
         }
 
         .submit-btn {
@@ -106,7 +112,7 @@
     <div class="navbar">
         <div class="navbar-logo"><img src="logo.png" alt="logo" width="80"></div>
         <div class="navbar-menu">
-            <a href="#">Início</a>
+            <a href="home.html">Início</a>
             <a href="#">Sobre</a>
             <a href="#">Contato</a>
         </div>
@@ -124,25 +130,14 @@
                 <label for="password">Senha</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit" class="submit-btn">Entrar</button>
+            <button type="submit" class="submit-btn" onclick="user()">Entrar</button>
         </form>
-        <div class="error-message" id="errorMessage"></div>
     </div>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('errorMessage');
-
-            if (email === 'pedro@gmail.com' && password === '1234') {
-                window.location.href = 'politica.html'; // Redireciona para a página user.html
-            } else {
-                errorMessage.textContent = 'Email ou senha incorretos!';
+            function user(){
+                window.location.href = 'user.html'; // Redireciona para a página user.html
             }
-        });
     </script>
 
 </body>
